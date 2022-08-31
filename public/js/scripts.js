@@ -63,21 +63,11 @@ const addCards = (items) => {
 };
 
 
-$(document).ready(function(){​
-
-    $('.materialboxed').materialbox();​
-
-    $('#formSubmit').click(()=>{​
-
-        submitForm();​
-
-    })​
-
-    getProjects();​
-
-    $('.modal').modal();​
-
-  });
-
-
-​​
+$(document).ready(function () {
+	$(".materialboxed").materialbox();
+	$("#formSubmit").click(() => {
+		submitForm();
+	});
+	getProjects();
+	$(".modal").modal();
+});
