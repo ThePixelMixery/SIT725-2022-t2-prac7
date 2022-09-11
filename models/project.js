@@ -5,7 +5,7 @@ setTimeout(() => {
 }, 2000);
 
 const insertProjects = (project, callback) => {
-	projectCollection.insert(project, callback);
+	projectCollection.insertOne(project, callback);
 };
 
 const getProjects = (callback) => {
