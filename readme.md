@@ -1,6 +1,6 @@
-# SIT725-2022-t2-Prac5
+# SIT725-2022-t2-Prac7
 
-Sorry for the revert commit. Had a repo identification issue because of forget to change the .git file
+Practicing sockets
 
 ## Pre-reqs
 
