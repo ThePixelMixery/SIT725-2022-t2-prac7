@@ -62,21 +62,3 @@ describe("Add Two Numbers", function() {
           });
     });
   });
-
-
-  describe("Add Two strings", function() {
-    var url = "http://localhost:8080/api/projects";
-    it("should return status 200", function(done) {
-        request(url, function(error, response, body) {
-            expect(response.statusCode).to.equal(200);
-            done()
-          });
-    });
-    it("returns the result as array", function(done) {
-        request(url, function(error, response, body) {
-            body = JSON.parse(body)
-            expect(body).to.be.a('array');
-            done()
-          });
-    });
-  });
