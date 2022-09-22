@@ -3,17 +3,16 @@ const clickMe = () => {
 };
 
 const addProjectToApp = (project) => {
-    $.ajax({
-        url: '/api/projects',
-        data: project,
-        type: 'POST',
-        success: (result) => {
-            alert(result.message);
-            location.reload();
-        }
-    })
-}
-
+	$.ajax({
+		url: "/api/projects",
+		data: project,
+		type: "POST",
+		success: (result) => {
+			alert(result.message);
+			location.reload();
+		},
+	});
+};
 
 const submitForm = () => {
 	let formData = {};
@@ -26,16 +25,15 @@ const submitForm = () => {
 	addProjectToApp(formData);
 };
 const getProjects = () => {
-    $.get('/api/projects',(response) => {
-        if(response.statusCode==200){
-            console.log(response)
-            addCards(response.data);
-        }
-        else {
-            console.log(response)
-        }
-    })
-}
+	$.get("/api/projects", (response) => {
+		if (response.statusCode == 200) {
+			console.log(response);
+			addCards(response.data);
+		} else {
+			console.log(response);
+		}
+	});
+};
 
 const addCards = (items) => {
 	items.forEach((item) => {
@@ -62,6 +60,10 @@ const addCards = (items) => {
 	});
 };
 
+let socket = io();
+socket.on("number", (msg) => {
+	$("#pageTitle").html("Welcome to Pupperoni " + msg);
+});
 
 $(document).ready(function () {
 	$(".materialboxed").materialbox();
